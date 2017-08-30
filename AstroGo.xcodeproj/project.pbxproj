@@ -11,6 +11,7 @@
 		1D33DEFF1F56BC3200405401 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DEFC1F56BC3100405401 /* WebViewViewController.swift */; };
 		1D33DF001F56BC3200405401 /* WebViewViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DEFD1F56BC3100405401 /* WebViewViewControllerViewModel.swift */; };
 		1D33DF011F56BC3200405401 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DEFE1F56BC3100405401 /* WebView.swift */; };
+		1D33DF031F56BCC600405401 /* DeeplinkBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DF021F56BCC600405401 /* DeeplinkBuildable.swift */; };
 		1D964D111F566F0900BB06B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D964D101F566F0900BB06B1 /* AppDelegate.swift */; };
 		1D964D161F566F0900BB06B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D964D141F566F0900BB06B1 /* Main.storyboard */; };
 		1D964D181F566F0900BB06B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D964D171F566F0900BB06B1 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		1D33DEFC1F56BC3100405401 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		1D33DEFD1F56BC3100405401 /* WebViewViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewControllerViewModel.swift; sourceTree = "<group>"; };
 		1D33DEFE1F56BC3100405401 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		1D33DF021F56BCC600405401 /* DeeplinkBuildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkBuildable.swift; sourceTree = "<group>"; };
 		1D964D0D1F566F0900BB06B1 /* AstroGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D964D101F566F0900BB06B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D964D151F566F0900BB06B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				1D964D5D1F56B2AB00BB06B1 /* Riblet.swift */,
 				1D964D5B1F56B2AB00BB06B1 /* Router.swift */,
 				1D964D581F56B27700BB06B1 /* NibLoadable.swift */,
+				1D33DF021F56BCC600405401 /* DeeplinkBuildable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			files = (
 				1D33DEFF1F56BC3200405401 /* WebViewViewController.swift in Sources */,
 				1D33DF001F56BC3200405401 /* WebViewViewControllerViewModel.swift in Sources */,
+				1D33DF031F56BCC600405401 /* DeeplinkBuildable.swift in Sources */,
 				1D964D601F56B32000BB06B1 /* View.swift in Sources */,
 				1D964D641F56B36100BB06B1 /* TableViewCell.swift in Sources */,
 				1D964D111F566F0900BB06B1 /* AppDelegate.swift in Sources */,
