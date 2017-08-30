@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		003D4A30F145B336622139E1 /* Pods_AstroGoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7823C06BD88A7C36A8940EA0 /* Pods_AstroGoTests.framework */; };
+		1D33DEFF1F56BC3200405401 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DEFC1F56BC3100405401 /* WebViewViewController.swift */; };
+		1D33DF001F56BC3200405401 /* WebViewViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DEFD1F56BC3100405401 /* WebViewViewControllerViewModel.swift */; };
+		1D33DF011F56BC3200405401 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33DEFE1F56BC3100405401 /* WebView.swift */; };
 		1D964D111F566F0900BB06B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D964D101F566F0900BB06B1 /* AppDelegate.swift */; };
 		1D964D161F566F0900BB06B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D964D141F566F0900BB06B1 /* Main.storyboard */; };
 		1D964D181F566F0900BB06B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D964D171F566F0900BB06B1 /* Assets.xcassets */; };
@@ -41,6 +44,10 @@
 /* Begin PBXFileReference section */
 		0328FB1648CB987B40638F61 /* Pods-AstroGoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroGoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AstroGoUITests/Pods-AstroGoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		06C7FE3FE1A71A6CADA222A8 /* Pods-AstroGoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstroGoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AstroGoTests/Pods-AstroGoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D33DEFB1F56BC3100405401 /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		1D33DEFC1F56BC3100405401 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		1D33DEFD1F56BC3100405401 /* WebViewViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewControllerViewModel.swift; sourceTree = "<group>"; };
+		1D33DEFE1F56BC3100405401 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1D964D0D1F566F0900BB06B1 /* AstroGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D964D101F566F0900BB06B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D964D151F566F0900BB06B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -240,6 +247,10 @@
 		1D964D5E1F56B2B600BB06B1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1D33DEFB1F56BC3100405401 /* WebView.storyboard */,
+				1D33DEFE1F56BC3100405401 /* WebView.swift */,
+				1D33DEFC1F56BC3100405401 /* WebViewViewController.swift */,
+				1D33DEFD1F56BC3100405401 /* WebViewViewControllerViewModel.swift */,
 				1D964D631F56B36100BB06B1 /* TableViewCell.swift */,
 				1D964D4F1F566F8C00BB06B1 /* ViewController.swift */,
 				1D964D5F1F56B32000BB06B1 /* View.swift */,
@@ -586,10 +597,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D33DEFF1F56BC3200405401 /* WebViewViewController.swift in Sources */,
+				1D33DF001F56BC3200405401 /* WebViewViewControllerViewModel.swift in Sources */,
 				1D964D601F56B32000BB06B1 /* View.swift in Sources */,
 				1D964D641F56B36100BB06B1 /* TableViewCell.swift in Sources */,
 				1D964D111F566F0900BB06B1 /* AppDelegate.swift in Sources */,
 				1D964D621F56B34300BB06B1 /* ResusableView.swift in Sources */,
+				1D33DF011F56BC3200405401 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View View Controller-->
+        <scene sceneID="hVG-mF-o0U">
+            <objects>
+                <viewController storyboardIdentifier="WebViewViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZAr-sb-Kd5" customClass="WebViewViewController" customModule="Fave" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="27W-D6-Oft"/>
+                        <viewControllerLayoutGuide type="bottom" id="p9Y-Fc-gRb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dcB-1a-95A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVc-Hk-bVa" userLabel="Web View Container" customClass="View" customModule="Fave" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fVc-Hk-bVa" secondAttribute="trailing" id="9Kb-kv-AAq"/>
+                            <constraint firstItem="fVc-Hk-bVa" firstAttribute="top" secondItem="27W-D6-Oft" secondAttribute="bottom" id="i7z-dH-SNK"/>
+                            <constraint firstItem="p9Y-Fc-gRb" firstAttribute="top" secondItem="fVc-Hk-bVa" secondAttribute="bottom" id="tyg-rb-t9I"/>
+                            <constraint firstItem="fVc-Hk-bVa" firstAttribute="leading" secondItem="dcB-1a-95A" secondAttribute="leading" id="vfl-Bb-Msh"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <outlet property="webViewContainer" destination="fVc-Hk-bVa" id="fs0-wW-ySU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yu7-Km-3em" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279.19999999999999" y="81.409295352323838"/>
+        </scene>
+    </scenes>
+</document>

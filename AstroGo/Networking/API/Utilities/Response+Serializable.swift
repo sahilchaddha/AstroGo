@@ -18,7 +18,7 @@ extension DataRequest {
 
      - returns: The serialized object if the serialization was successful. Otherwise, returns an Error.
      */
-    public static func ObjectMapperSerializer<T: Serializable>() -> DataResponseSerializer<T> {
+    public static func ObjectMapperSerializer<T: Codable>() -> DataResponseSerializer<T> {
         let result: DataResponseSerializer<T> = DataResponseSerializer { request, response, data, error in
             if let error = error {
                 return .failure(error)
