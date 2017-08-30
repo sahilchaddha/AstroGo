@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D7DBE1D1F5659A500AA9357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE1C1F5659A500AA9357 /* AppDelegate.swift */; };
+		1D7DBE1F1F5659A500AA9357 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE1E1F5659A500AA9357 /* ViewController.swift */; };
+		1D7DBE221F5659A500AA9357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7DBE201F5659A500AA9357 /* Main.storyboard */; };
+		1D7DBE241F5659A500AA9357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7DBE231F5659A500AA9357 /* Assets.xcassets */; };
+		1D7DBE271F5659A500AA9357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7DBE251F5659A500AA9357 /* LaunchScreen.storyboard */; };
+		1D7DBE321F5659A500AA9357 /* AstroGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE311F5659A500AA9357 /* AstroGoTests.swift */; };
+		1D7DBE3D1F5659A500AA9357 /* AstroGoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE3C1F5659A500AA9357 /* AstroGoUITests.swift */; };
+		1D7DBE4D1F565A3A00AA9357 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE4C1F565A3A00AA9357 /* README.md */; };
+		1D7DBE501F565AAC00AA9357 /* RequestPayloadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE4F1F565AAC00AA9357 /* RequestPayloadType.swift */; };
+		1D7DBE521F565AF900AA9357 /* ResponsePayloadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE511F565AF900AA9357 /* ResponsePayloadType.swift */; };
+		1D7DBE541F565BA200AA9357 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE531F565BA200AA9357 /* NetworkService.swift */; };
+		1D7DBE581F565C5200AA9357 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE571F565C5200AA9357 /* Builder.swift */; };
+		1D7DBE5A1F565C6200AA9357 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE591F565C6100AA9357 /* Router.swift */; };
+		1D7DBE5C1F565C7100AA9357 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE5B1F565C7100AA9357 /* Interactor.swift */; };
+		1D7DBE5E1F565D0300AA9357 /* Riblet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE5D1F565D0300AA9357 /* Riblet.swift */; };
+		1D7DBE601F565D5500AA9357 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DBE5F1F565D5500AA9357 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D7DBE2E1F5659A500AA9357 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D7DBE111F5659A500AA9357 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D7DBE181F5659A500AA9357;
+			remoteInfo = AstroGo;
+		};
+		1D7DBE391F5659A500AA9357 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D7DBE111F5659A500AA9357 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D7DBE181F5659A500AA9357;
+			remoteInfo = AstroGo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D7DBE191F5659A500AA9357 /* AstroGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D7DBE1C1F5659A500AA9357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D7DBE1E1F5659A500AA9357 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D7DBE211F5659A500AA9357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1D7DBE231F5659A500AA9357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D7DBE261F5659A500AA9357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D7DBE281F5659A500AA9357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D7DBE2D1F5659A500AA9357 /* AstroGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D7DBE311F5659A500AA9357 /* AstroGoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroGoTests.swift; sourceTree = "<group>"; };
+		1D7DBE331F5659A500AA9357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D7DBE381F5659A500AA9357 /* AstroGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D7DBE3C1F5659A500AA9357 /* AstroGoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroGoUITests.swift; sourceTree = "<group>"; };
+		1D7DBE3E1F5659A500AA9357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D7DBE4C1F565A3A00AA9357 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1D7DBE4F1F565AAC00AA9357 /* RequestPayloadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPayloadType.swift; sourceTree = "<group>"; };
+		1D7DBE511F565AF900AA9357 /* ResponsePayloadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsePayloadType.swift; sourceTree = "<group>"; };
+		1D7DBE531F565BA200AA9357 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1D7DBE571F565C5200AA9357 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		1D7DBE591F565C6100AA9357 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1D7DBE5B1F565C7100AA9357 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		1D7DBE5D1F565D0300AA9357 /* Riblet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Riblet.swift; sourceTree = "<group>"; };
+		1D7DBE5F1F565D5500AA9357 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D7DBE161F5659A500AA9357 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D7DBE2A1F5659A500AA9357 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D7DBE351F5659A500AA9357 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D7DBE101F5659A500AA9357 = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE1B1F5659A500AA9357 /* AstroGo */,
+				1D7DBE301F5659A500AA9357 /* AstroGoTests */,
+				1D7DBE3B1F5659A500AA9357 /* AstroGoUITests */,
+				1D7DBE1A1F5659A500AA9357 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D7DBE1A1F5659A500AA9357 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE191F5659A500AA9357 /* AstroGo.app */,
+				1D7DBE2D1F5659A500AA9357 /* AstroGoTests.xctest */,
+				1D7DBE381F5659A500AA9357 /* AstroGoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D7DBE1B1F5659A500AA9357 /* AstroGo */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE551F565BF400AA9357 /* RIB */,
+				1D7DBE4A1F5659D700AA9357 /* Networking */,
+				1D7DBE1C1F5659A500AA9357 /* AppDelegate.swift */,
+				1D7DBE1E1F5659A500AA9357 /* ViewController.swift */,
+				1D7DBE201F5659A500AA9357 /* Main.storyboard */,
+				1D7DBE231F5659A500AA9357 /* Assets.xcassets */,
+				1D7DBE251F5659A500AA9357 /* LaunchScreen.storyboard */,
+				1D7DBE281F5659A500AA9357 /* Info.plist */,
+			);
+			path = AstroGo;
+			sourceTree = "<group>";
+		};
+		1D7DBE301F5659A500AA9357 /* AstroGoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE311F5659A500AA9357 /* AstroGoTests.swift */,
+				1D7DBE331F5659A500AA9357 /* Info.plist */,
+			);
+			path = AstroGoTests;
+			sourceTree = "<group>";
+		};
+		1D7DBE3B1F5659A500AA9357 /* AstroGoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE3C1F5659A500AA9357 /* AstroGoUITests.swift */,
+				1D7DBE3E1F5659A500AA9357 /* Info.plist */,
+			);
+			path = AstroGoUITests;
+			sourceTree = "<group>";
+		};
+		1D7DBE4A1F5659D700AA9357 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE4B1F565A0900AA9357 /* API */,
+				1D7DBE4C1F565A3A00AA9357 /* README.md */,
+				1D7DBE531F565BA200AA9357 /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1D7DBE4B1F565A0900AA9357 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE4E1F565A7A00AA9357 /* Type */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		1D7DBE4E1F565A7A00AA9357 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE4F1F565AAC00AA9357 /* RequestPayloadType.swift */,
+				1D7DBE511F565AF900AA9357 /* ResponsePayloadType.swift */,
+			);
+			name = Type;
+			sourceTree = "<group>";
+		};
+		1D7DBE551F565BF400AA9357 /* RIB */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE561F565C1600AA9357 /* Type */,
+				1D7DBE5F1F565D5500AA9357 /* README.md */,
+			);
+			path = RIB;
+			sourceTree = "<group>";
+		};
+		1D7DBE561F565C1600AA9357 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				1D7DBE571F565C5200AA9357 /* Builder.swift */,
+				1D7DBE591F565C6100AA9357 /* Router.swift */,
+				1D7DBE5B1F565C7100AA9357 /* Interactor.swift */,
+				1D7DBE5D1F565D0300AA9357 /* Riblet.swift */,
+			);
+			name = Type;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D7DBE181F5659A500AA9357 /* AstroGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D7DBE411F5659A500AA9357 /* Build configuration list for PBXNativeTarget "AstroGo" */;
+			buildPhases = (
+				1D7DBE151F5659A500AA9357 /* Sources */,
+				1D7DBE161F5659A500AA9357 /* Frameworks */,
+				1D7DBE171F5659A500AA9357 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AstroGo;
+			productName = AstroGo;
+			productReference = 1D7DBE191F5659A500AA9357 /* AstroGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D7DBE2C1F5659A500AA9357 /* AstroGoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D7DBE441F5659A500AA9357 /* Build configuration list for PBXNativeTarget "AstroGoTests" */;
+			buildPhases = (
+				1D7DBE291F5659A500AA9357 /* Sources */,
+				1D7DBE2A1F5659A500AA9357 /* Frameworks */,
+				1D7DBE2B1F5659A500AA9357 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D7DBE2F1F5659A500AA9357 /* PBXTargetDependency */,
+			);
+			name = AstroGoTests;
+			productName = AstroGoTests;
+			productReference = 1D7DBE2D1F5659A500AA9357 /* AstroGoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1D7DBE371F5659A500AA9357 /* AstroGoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D7DBE471F5659A500AA9357 /* Build configuration list for PBXNativeTarget "AstroGoUITests" */;
+			buildPhases = (
+				1D7DBE341F5659A500AA9357 /* Sources */,
+				1D7DBE351F5659A500AA9357 /* Frameworks */,
+				1D7DBE361F5659A500AA9357 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D7DBE3A1F5659A500AA9357 /* PBXTargetDependency */,
+			);
+			name = AstroGoUITests;
+			productName = AstroGoUITests;
+			productReference = 1D7DBE381F5659A500AA9357 /* AstroGoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D7DBE111F5659A500AA9357 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Astro;
+				TargetAttributes = {
+					1D7DBE181F5659A500AA9357 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					1D7DBE2C1F5659A500AA9357 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1D7DBE181F5659A500AA9357;
+					};
+					1D7DBE371F5659A500AA9357 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1D7DBE181F5659A500AA9357;
+					};
+				};
+			};
+			buildConfigurationList = 1D7DBE141F5659A500AA9357 /* Build configuration list for PBXProject "AstroGo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D7DBE101F5659A500AA9357;
+			productRefGroup = 1D7DBE1A1F5659A500AA9357 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D7DBE181F5659A500AA9357 /* AstroGo */,
+				1D7DBE2C1F5659A500AA9357 /* AstroGoTests */,
+				1D7DBE371F5659A500AA9357 /* AstroGoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D7DBE171F5659A500AA9357 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D7DBE271F5659A500AA9357 /* LaunchScreen.storyboard in Resources */,
+				1D7DBE241F5659A500AA9357 /* Assets.xcassets in Resources */,
+				1D7DBE221F5659A500AA9357 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D7DBE2B1F5659A500AA9357 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D7DBE361F5659A500AA9357 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D7DBE151F5659A500AA9357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D7DBE5A1F565C6200AA9357 /* Router.swift in Sources */,
+				1D7DBE521F565AF900AA9357 /* ResponsePayloadType.swift in Sources */,
+				1D7DBE501F565AAC00AA9357 /* RequestPayloadType.swift in Sources */,
+				1D7DBE5C1F565C7100AA9357 /* Interactor.swift in Sources */,
+				1D7DBE581F565C5200AA9357 /* Builder.swift in Sources */,
+				1D7DBE4D1F565A3A00AA9357 /* README.md in Sources */,
+				1D7DBE1F1F5659A500AA9357 /* ViewController.swift in Sources */,
+				1D7DBE541F565BA200AA9357 /* NetworkService.swift in Sources */,
+				1D7DBE1D1F5659A500AA9357 /* AppDelegate.swift in Sources */,
+				1D7DBE601F565D5500AA9357 /* README.md in Sources */,
+				1D7DBE5E1F565D0300AA9357 /* Riblet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D7DBE291F5659A500AA9357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D7DBE321F5659A500AA9357 /* AstroGoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D7DBE341F5659A500AA9357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D7DBE3D1F5659A500AA9357 /* AstroGoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D7DBE2F1F5659A500AA9357 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D7DBE181F5659A500AA9357 /* AstroGo */;
+			targetProxy = 1D7DBE2E1F5659A500AA9357 /* PBXContainerItemProxy */;
+		};
+		1D7DBE3A1F5659A500AA9357 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D7DBE181F5659A500AA9357 /* AstroGo */;
+			targetProxy = 1D7DBE391F5659A500AA9357 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D7DBE201F5659A500AA9357 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D7DBE211F5659A500AA9357 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1D7DBE251F5659A500AA9357 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D7DBE261F5659A500AA9357 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D7DBE3F1F5659A500AA9357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D7DBE401F5659A500AA9357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D7DBE421F5659A500AA9357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AstroGo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Astro.AstroGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1D7DBE431F5659A500AA9357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AstroGo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Astro.AstroGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1D7DBE451F5659A500AA9357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AstroGoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Astro.AstroGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AstroGo.app/AstroGo";
+			};
+			name = Debug;
+		};
+		1D7DBE461F5659A500AA9357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AstroGoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Astro.AstroGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AstroGo.app/AstroGo";
+			};
+			name = Release;
+		};
+		1D7DBE481F5659A500AA9357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = AstroGoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Astro.AstroGoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = AstroGo;
+			};
+			name = Debug;
+		};
+		1D7DBE491F5659A500AA9357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = AstroGoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Astro.AstroGoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = AstroGo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D7DBE141F5659A500AA9357 /* Build configuration list for PBXProject "AstroGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D7DBE3F1F5659A500AA9357 /* Debug */,
+				1D7DBE401F5659A500AA9357 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D7DBE411F5659A500AA9357 /* Build configuration list for PBXNativeTarget "AstroGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D7DBE421F5659A500AA9357 /* Debug */,
+				1D7DBE431F5659A500AA9357 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1D7DBE441F5659A500AA9357 /* Build configuration list for PBXNativeTarget "AstroGoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D7DBE451F5659A500AA9357 /* Debug */,
+				1D7DBE461F5659A500AA9357 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1D7DBE471F5659A500AA9357 /* Build configuration list for PBXNativeTarget "AstroGoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D7DBE481F5659A500AA9357 /* Debug */,
+				1D7DBE491F5659A500AA9357 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D7DBE111F5659A500AA9357 /* Project object */;
+}
