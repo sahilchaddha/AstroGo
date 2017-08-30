@@ -1,0 +1,6 @@
+framework module Pods_AstroGoTests {
+  umbrella header "Pods-AstroGoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

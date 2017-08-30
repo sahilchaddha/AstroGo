@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-protocol NetworkService: Cachable {
+protocol NetworkService {
     /**
      Default session configuration object. The manager is configured with
      ```
