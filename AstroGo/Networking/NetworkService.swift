@@ -1,228 +1,161 @@
 //
-//  NetworkService.swift
-//  AstroGo
+//  Network.swift
 //
-//  Created by Nazih on 30/08/2017.
-//  Copyright © 2017 Astro. All rights reserved.
+//  Created by Nazih Shoura.
+//  Copyright © 2017 Nazih Shoura. All rights reserved.
+//  See LICENSE.txt for license information
 //
 
 import Foundation
+import WebKit
 import Alamofire
+import RxOptional
 
-protocol NetworkService {
+protocol NetworkServiceType: SubjectLabelable {
     /**
      Default session configuration object. The manager is configured with
      ```
      HTTPAdditionalHeaders = ["User-Agent": DefaultAPI.userAgent]
      ```
-     
-     - author: Nazih Shoura
      */
     var managerWithDefaultConfiguration: SessionManager { get }
-    
-    /**
-     A session configuration object that allows HTTP and HTTPS uploads or downloads to be performed in the background. Identifier is "com.kfit.KFIT"
-     ```
-     HTTPAdditionalHeaders = ["User-Agent": DefaultAPI.userAgent]
-     ```
-     
-     - author: Nazih Shoura
-     */
-    var managerWithBackgroundConfiguration: SessionManager { get }
-    
-    /**
-     A session configuration that uses no persistent storage for caches, cookies, or credentials. The manager is configured with
-     ```
-     HTTPAdditionalHeaders = ["User-Agent": DefaultAPI.userAgent]
-     ```
-     
-     - author: Nazih Shoura
-     */
-    var managerWithEphemeralConfiguration: SessionManager { get }
     
     /**
      The userAgent that the sessions are configured with.
      ```
      HTTPAdditionalHeaders = ["User-Agent": DefaultAPI.userAgent]
      ```
-     
-     - author: Nazih Shoura
      */
     var userAgent: String { get }
     
     /**
-     Creates a NSMutableURLRequest using all necessary parameters.
+     Creates an URLRequestConvertible.
      
-     - author: Nazih Shoura
-     
+     - parameter url: The URL to be requested
      - parameter method: Alamofire method object
-     - parameter URLString: An object adopting `URLStringConvertible`
-     - parameter parameters: A dictionary containing all necessary options
-     - parameter encoding: The kind of encoding used to process parameters
-     - parameter header: A dictionary containing all the addional headers
-     - returns: An instance of `NSMutableURLRequest`
+     - parameter parameters: A dictionary of query paramerters to be encoded in the URL
+     - parameter encoding: The kind of encoding used to encode the query parameters
+     - parameter header: A dictionary containing headers to be added in the request
+     - returns: An instance of `URLRequestConvertible`
+     
      */
-    func URLRequest(
-        method: HTTPMethod
-        , url: URL
-        , parameters: [String:AnyObject]?
+    func urlRequestConvertible(
+        forURL url: URL
+        , method: HTTPMethod
+        , parameters: [String: AnyObject]?
         , encoding: ParameterEncoding
-        , headers: [String:String]?)
-        throws -> URLRequestConvertible
-    
-    func setCookiesFromResponse(_ response: HTTPURLResponse)
-    
-    static var cookie: String? { get }
-    
-    var sessionExist: Bool { get }
+        , headers: [String: String]?
+        ) -> URLRequestConvertible
 }
 
-final class NetworkServiceDefault: Service, NetworkService {
+final class NetworkService: NetworkServiceType {
     
     let managerWithDefaultConfiguration: SessionManager
     
-    let managerWithBackgroundConfiguration: SessionManager
-    
-    let managerWithEphemeralConfiguration: SessionManager
-    
     let userAgent: String
-    
-    static var cookie: String?
     
     init() {
         
+        // User-Agent Header; see https://tools.ietf.org/html/rfc7231#section-5.5.3
+        // Example: `iOS Example/1.0 (org.alamofire.iOS-Example; build:1; iOS 10.0.0)`
         let userAgent: String = {
-            let infoDict = Bundle.main.infoDictionary
-            let appVersion = infoDict!["CFBundleShortVersionString"]!
-            let buildNumber = infoDict!["CFBundleVersion"]!
-            let currentDeviceModel = UIDevice.current.model
-            let currentDeviceSystemVersion = UIDevice.current.systemVersion
-            let userAgent = "AstroGo-Global/v\(appVersion)-\(buildNumber) (\(currentDeviceModel);iOS \(currentDeviceSystemVersion))"
+            guard let info = Bundle.main.infoDictionary else {
+                return "Unknown"
+            }
             
-            return userAgent
+            let executable = info[kCFBundleExecutableKey as String] as? String ?? "Unknown"
+            let bundle = info[kCFBundleIdentifierKey as String] as? String ?? "Unknown"
+            let appVersion = info["CFBundleShortVersionString"] as? String ?? "Unknown"
+            let appBuild = info[kCFBundleVersionKey as String] as? String ?? "Unknown"
+            let deviceModel = UIDevice.current.model
+            
+            let osNameVersion: String = {
+                let version = ProcessInfo.processInfo.operatingSystemVersion
+                let versionString = "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"
+                
+                let osName: String = {
+                    #if os(iOS)
+                        return "iOS"
+                    #elseif os(watchOS)
+                        return "watchOS"
+                    #elseif os(tvOS)
+                        return "tvOS"
+                    #elseif os(macOS)
+                        return "OS X"
+                    #elseif os(Linux)
+                        return "Linux"
+                    #else
+                        return "Unknown"
+                    #endif
+                }()
+                
+                return "\(osName) \(versionString)"
+            }()
+            
+            return "\(executable)/\(appVersion) (\(bundle); build:\(appBuild); device model:\(deviceModel) \(osNameVersion))"
         }()
         
         self.userAgent = userAgent
-        
-        managerWithEphemeralConfiguration = {
-            let configuration = URLSessionConfiguration.ephemeral
-            configuration.httpAdditionalHeaders = ["User-Agent": userAgent]
-            return SessionManager(configuration: configuration)
-        }()
-        
-        managerWithBackgroundConfiguration = {
-            let configuration = URLSessionConfiguration.background(withIdentifier: "com.Astro.AstroGo")
-            configuration.httpAdditionalHeaders = ["User-Agent": userAgent]
-            return SessionManager(configuration: configuration)
-        }()
         
         managerWithDefaultConfiguration = {
             let configuration = URLSessionConfiguration.default
             configuration.httpAdditionalHeaders = ["User-Agent": userAgent]
             return SessionManager(configuration: configuration)
         }()
-        
-        super.init()
-        
-        loadSession()
-        
-        app.logoutSignal.subscribeNext {
-            _ in
-            NetworkServiceDefault.clearCacheForCookies()
-            }.addDisposableTo(disposeBag)
     }
     
-    // A dummy struct to confirm to Alamofire 4 stupid update that requirs `URLRequestConvertible` as a parameter for `request` instead of URLRequest
-    private struct URLRequestConvertibleDummyStruct: URLRequestConvertible {
-        let urlRequest: URLRequest
-        init(urlRequest: URLRequest) {
-            self.urlRequest = urlRequest
-        }
-        func asURLRequest() throws -> URLRequest {
-            return self.urlRequest
-        }
-    }
-    
-    func URLRequest(
-        method: HTTPMethod
-        , url: URL
-        , parameters: [String:AnyObject]? = nil
+    func urlRequestConvertible(
+        forURL url: URL
+        , method: HTTPMethod
+        , parameters: [String: AnyObject]? = nil
         , encoding: ParameterEncoding = URLEncoding.default
-        , headers: [String:String]? = nil)
-        throws -> URLRequestConvertible {
-            var urlRequest = Foundation.URLRequest(url: url)
-            urlRequest.httpMethod = method.rawValue
-            urlRequest.httpShouldHandleCookies = false
-            
-            if let headers = headers {
-                for (headerField, headerValue) in headers {
-                    urlRequest.setValue(headerValue, forHTTPHeaderField: headerField)
-                }
+        , headers: [String: String]? = nil
+        ) -> URLRequestConvertible {
+        
+        var urlRequest = Foundation.URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
+        
+        if let headers = headers {
+            for (headerField, headerValue) in headers {
+                urlRequest.setValue(headerValue, forHTTPHeaderField: headerField)
             }
-            
-            if let cookie = NetworkServiceDefault.cookie {
-                urlRequest.setValue(cookie, forHTTPHeaderField: "Cookie")
-            }
-            
-            if let parameters = parameters {
-                urlRequest = try encoding.encode(urlRequest, with: parameters)
-            }
-            
-            #if DEBUG
-                urlRequest.cachePolicy = Foundation.URLRequest.CachePolicy.reloadIgnoringCacheData
-            #endif
-            
-            logger.log(request: urlRequest, parameters: parameters, headers: headers, cookie: NetworkServiceDefault.cookie)
-            
-            return URLRequestConvertibleDummyStruct(urlRequest: urlRequest)
-    }
-    
-    func setCookiesFromResponse(_ response: HTTPURLResponse) {
-        if let headerFields = response.allHeaderFields as? [String:String]
-        {
-            guard let cookie = headerFields["Set-Cookie"] else {
-                return
-            }
-            
-            NetworkServiceDefault.cookie = cookie
-            NetworkServiceDefault.cache(cookie)
-        }
-    }
-    
-    var sessionExist: Bool {
-        guard let cookie = UserDefaults.standard
-            .object(forKey: literal.Cookie) as? String
-            , !cookie.isEmpty
-            else {
-                return false
         }
         
-        return true
-    }
-    
-    func loadSession() {
-        NetworkServiceDefault.cookie = NetworkServiceDefault.loadCacheForCookies()
+        if let parameters = parameters
+            , parameters.isNotEmpty {
+            do {
+                urlRequest = try encoding.encode(urlRequest, with: parameters)
+            } catch {
+                fatalError("Make sure the paramters can be encoded!\nReceived parameters: \(parameters)")
+            }
+        }
+        
+        #if DEBUG
+            urlRequest.cachePolicy = Foundation.URLRequest.CachePolicy.reloadIgnoringCacheData
+        #endif
+        
+        return urlRequest
     }
 }
 
-extension NetworkServiceDefault {
-    static func cache(_ cookie: String) {
+extension NetworkService {
+    fileprivate static func cache(cookie: String) {
         UserDefaults.standard
-            .set(cookie, forKey: literal.Cookie)
+            .set(cookie, forKey: "")
     }
     
-    static func loadCacheForCookies() -> String? {
-        guard let cookie = UserDefaults.standard.object(forKey: literal.Cookie) as? String else {
-            NetworkServiceDefault.clearCacheForCookies()
-            return nil
+    fileprivate static func loadCacheForCookies() -> String? {
+        if let cookie = UserDefaults.standard.object(forKey: "") as? String {
+            return cookie
         }
         
-        return cookie
+        NetworkService.clearCacheForCookies()
+        return nil
     }
     
-    static func clearCacheForCookies() {
+    fileprivate static func clearCacheForCookies() {
         UserDefaults.standard
-            .set(nil, forKey: literal.Cookie)
-        NetworkServiceDefault.cookie = nil
+            .set(nil, forKey: "")
     }
 }
+
